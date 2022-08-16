@@ -9,5 +9,6 @@ public class Java100_variable_HelloJava {
         sum = a + b;
 
         System.out.println(a + b);
+        System.out.println(sum);
     }
 }
