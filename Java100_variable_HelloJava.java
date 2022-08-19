@@ -1,25 +1,31 @@
-class Car {
-    private String modelName;
-    private int modelYear;
-    private String color;
-    private int maxSpeed;
-    private int currentSpeed;
-
-    Car(String modelName, int modelYear, String color, int maxSpeed) {
-        this.modelName = modelName;
-        this.modelYear = modelYear;
-        this.color = color;
-        this.maxSpeed = maxSpeed;
-    }
-
-    public String getModel() {
-        return this.modelYear + "년식, 차종 : " + this.modelName + ", 색깔 : " + this.color + ", 최대속도 : " + this.maxSpeed;
-    }
+class Field {
+    static int classVar = 10; // 클래스 변수 선언
+    int instanceVar = 20; // 인스턴스 변수 선언
 }
 
 public class Java100_variable_HelloJava {
     public static void main(String[] args) {
-        Car myCar = new Car("폭스바겐", 2020, "회색", 200); // 생성자 호출
-        System.out.println(myCar.getModel());
+        int var = 30; // 지역 변수 선언
+        System.out.println(var + "\n"); // 지역 변수 참조
+
+        Field myField1 = new Field(); // 인스턴스 생성
+        Field myField2 = new Field(); // 인스턴스 생성
+
+        System.out.println(Field.classVar); // 클래스 변수 참조
+        System.out.println(myField1.classVar);
+        System.out.println(myField2.classVar + "\n");
+
+        myField1.classVar = 100; // 클래스 변수 값 변경
+
+        System.out.println(Field.classVar); // 클래스 변수 참조
+        System.out.println(myField1.classVar);
+        System.out.println(myField2.classVar + "\n");
+
+        System.out.println(myField1.instanceVar); // 인스턴스 변수 참조
+        System.out.println(myField2.instanceVar + "\n");
+
+        myField1.instanceVar = 200;
+        System.out.println(myField1.instanceVar); // 인스턴스 변수 참조
+        System.out.println(myField2.instanceVar);
     }
 }
