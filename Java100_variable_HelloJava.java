@@ -1,20 +1,23 @@
-class Method {
-    int a = 10; // 인스턴스 변수
-    int b = 20; // 인스턴스 변수
+class Parent {
+}
 
-    int add() {
-        return a + b;
-    } // 인스턴스 메소드
+class Child extends Parent {
+}
 
-    static int add(int x, int y) {
-        return x + y;
-    } // 클래스 메소드
+class Brother extends Parent {
 }
 
 public class Java100_variable_HelloJava {
     public static void main(String[] args) {
-        System.out.println(Method.add(20, 30)); // 클래스 메소드 호출
-        Method myMethod = new Method(); // 인스턴스 생성
-        System.out.println(myMethod.add()); // 인스턴스 메소드 호출
+        Parent p = new Parent();
+        System.out.println(p instanceof Object); // true
+        System.out.println(p instanceof Parent); // true
+        System.out.println(p instanceof Child); // false
+        System.out.println();
+
+        Parent c = new Child();
+        System.out.println(c instanceof Object); // true
+        System.out.println(c instanceof Parent); // true
+        System.out.println(c instanceof Child); // true
     }
 }
