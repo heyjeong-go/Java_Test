@@ -1,23 +1,26 @@
-class Parent {
+abstract class Animal {
+    abstract void cry();
 }
 
-class Child extends Parent {
+class Cat extends Animal {
+    void cry() {
+        System.out.println("냐옹냐옹!");
+    }
 }
 
-class Brother extends Parent {
+class Dog extends Animal {
+    void cry() {
+        System.out.println("멍멍!");
+    }
 }
 
 public class Java100_variable_HelloJava {
     public static void main(String[] args) {
-        Parent p = new Parent();
-        System.out.println(p instanceof Object); // true
-        System.out.println(p instanceof Parent); // true
-        System.out.println(p instanceof Child); // false
-        System.out.println();
+        // Animal a = new Animal() // 추상 클래스는 인스턴스 생성 불가능
+        Cat c = new Cat();
+        Dog d = new Dog();
 
-        Parent c = new Child();
-        System.out.println(c instanceof Object); // true
-        System.out.println(c instanceof Parent); // true
-        System.out.println(c instanceof Child); // true
+        c.cry();
+        d.cry();
     }
 }
