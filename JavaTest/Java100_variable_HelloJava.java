@@ -1,3 +1,5 @@
+package JavaTest;
+
 interface Animal {
     public abstract void cry();
 }
