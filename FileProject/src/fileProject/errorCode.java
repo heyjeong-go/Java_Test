@@ -1,4 +1,4 @@
-package fileProjectTest;
+package fileProject;
 
 public class errorCode {
 
